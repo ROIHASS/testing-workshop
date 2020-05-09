@@ -30,4 +30,4 @@ function UserService(config) {
 
     }
 }
-module.exports.UserService = UserService;
+module.exports = UserService;

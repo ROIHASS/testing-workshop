@@ -23,18 +23,45 @@ test('👶🏽 This is a playground test 🚂', () => {
 // ✅ TASK: Wrap this simple test above with a 'describe' statement
 // 💡 TIP: Start typing 'describe' and your IDE should suggest auto-completion
 // 💡 TIP: This the syntax of describe: describe('', () => {//test comes here});
+describe("describe test", () => {
+    test("describe working well", () => { })
+})
 
 // ✅ TASK: Add your first test 🎉. This test should not test real code, just choose a title and put one hard-coded assertion (expect)
+
+describe("expect describe", () => {
+    test('expect test', () => {
+        expect('name').toContain('name')
+    })
+})
+
 
 // ✅ TASK: Test the 'validateUser' method of the 'usersService': Ensure that when no 'name' property is provided, 
 //    the response 'succeeded' property is false. Remember the fail-first principle, ensure the test fail when appropriate
 // 💡 TIP: Here's a valid user object to pass. Remove the property name from this object.
-const user = {
-    name: 'Kent',
-    familyName: 'Beck',
-    zipCode: '32486-01',
-    address: 'Moonlight road 181, Alaska'
-};
+
+
+describe("user validatation describe", () => {
+    test.skip('user valid test', () => {
+        // Arrange
+        const userServiceUnderTest = new usersService()
+        const user = {
+            name: 'Kent',
+            familyName: 'Beck',
+            zipCode: '32486-01',
+            address: 'Moonlight road 181, Alaska'
+        };
+
+        // Act
+        const resivedResponse = userServiceUnderTest.validateUser(user)
+
+        // Assert
+        expect(resivedResponse.succeeded).toBe(true)
+        expect(resivedResponse.reasons.length).toBe(0)
+
+    })
+
+})
 
 // ✅ TASK: Use the AAA pattern in the test you just coded above ☝🏻
 // 💡 TIP: Put 3 sections within the test (appear below). In each one of them, place the appropriate parts

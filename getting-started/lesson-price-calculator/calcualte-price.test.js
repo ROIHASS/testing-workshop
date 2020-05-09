@@ -54,6 +54,9 @@ describe('Calculate price', () => {
             const receivedResult = productsServiceUnderTest.getProducts('books');
 
             // Assert
+            expect(receivedResult).toContain(product1);
+            expect(receivedResult).toContain(product2);
+
             let howManyFound = 0;
             receivedResult.forEach((aProduct) => {
                 if (aProduct.name === "War & peace" || aProduct.name === "Moby dick") {

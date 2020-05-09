@@ -1,0 +1,3 @@
+npm i jest
+
+"test:dev": "jest --watch --silent",
